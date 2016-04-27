@@ -6,8 +6,14 @@ project(jsk_2016_04_cmo)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED)
 
+# setup Gazebo
+find_package(gazebo REQUIRED)
+include_directories(${GAZEBO_INCLUDE_DIRS})
+link_directories(${GAZEBO_LIBRARIE_DIRS})
+list(APPEND CMAKE_CXX_FLAGS "${GAZEBO_CXX_FLAGS}")
+
 ## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
+find_package(Boost REQUIRED COMPONENTS system)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -114,6 +120,8 @@ catkin_package(
 # add_library(jsk_2016_04_cmo
 #   src/${PROJECT_NAME}/jsk_2016_04_cmo.cpp
 # )
+add_library(model_push SHARED src/model_push.cpp)
+target_link_libraries(model_push ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES})
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
