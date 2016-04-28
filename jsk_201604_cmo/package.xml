@@ -12,6 +12,8 @@
 
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>gazebo_ros</run_depend>
+  <run_depend>fetcheus</run_depend>
+  <run_depend>jsk_recognition_msgs</run_depend>
 
   <export>
     <gazebo_ros gazebo_model_path="${prefix}/models" />

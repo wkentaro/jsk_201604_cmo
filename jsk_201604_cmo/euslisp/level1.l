@@ -1,9 +1,8 @@
 #!/usr/bin/env roseus
 ;; vim: set ft=lisp:
 
-(require :fetch-interface "package://fetcheus/fetch-interface.l")
-
 (require :util "package://jsk_2016_04_cmo/euslib/util.l")
+(require :fetch-interface "package://jsk_2016_04_cmo/euslib/fetch-interface.l")
 
 
 ;; -------------------------------------------------------------------------
@@ -13,14 +12,29 @@
   (fetch-init)
   (setq *robot* *fetch*)
 
-  (setq obj-coords
-        (make-coords
-          :pos (apply #'float-vector (mapcar #'m->mm '(0.8 -0.1 0.9)))
-          :rpy (apply #'float-vector (mapcar #'m->mm '(0 0 0)))
-          )
-        )
-  ; (setq obj (make-cube 60 60 60))
-  ; (send obj :transform obj-coords :world)
+  (setq hover-cube (send *ri* :detect-hover-cube))
+  (send hover-cube :set-color :Green 0.3)
 
-  (objects (list *robot* obj-coords))
+  (objects (list *robot* hover-cube))
+
+  (setq goal (send hover-cube :copy-worldcoords))
+  (send goal :orient 0 :x :world)
+  (send goal :translate #f(-10 0 0) :world)
+  ;;
+  (setq point (send goal :copy-worldcoords))
+  (send point :translate #f(-90 0 0) :world)
+  (setq av (send *robot* :rarm :inverse-kinematics point))
+  (send *ri* :angle-vector av (* 3 1000))
+  (send *irtviewer* :redraw)
+  (send *ri* :wait-interpolation)
+  ;;
+  (setq av (send *robot* :rarm :inverse-kinematics goal))
+  (send *ri* :angle-vector av (* 1 1000))
+  (send *irtviewer* :redraw)
+  (send *ri* :wait-interpolation)
+  ;;
+  (send *ri* :start-grasp)
+  ;;
+  (send *ri* :angle-vector (send *robot* :fold-pose) (* 3 1000))
+  (send *ri* :wait-interpolation)
   )

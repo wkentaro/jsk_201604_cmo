@@ -12,4 +12,10 @@
   <!-- Oh, you wanted a robot? -->
   <include file="$(find jsk_2016_04_cmo)/launch/include/fetch.launch.xml" />
 
+  <include file="$(find jsk_2016_04_cmo)/launch/include/detect_hover_cube.launch.xml" />
+
+  <node name="level1_motion"
+        pkg="jsk_2016_04_cmo" type="level1.l"
+        args="&quot;(main)&quot;" />
+
 </launch>
