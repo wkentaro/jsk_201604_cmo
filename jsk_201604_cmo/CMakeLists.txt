@@ -4,7 +4,7 @@ project(jsk_2016_04_cmo)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED)
+find_package(catkin REQUIRED COMPONENTS roseus)
 
 # setup Gazebo
 find_package(gazebo REQUIRED)
