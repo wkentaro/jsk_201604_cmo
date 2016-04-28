@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(jsk_2016_04_cmo)
+project(jsk_201604_cmo)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -103,7 +103,7 @@ find_package(Boost REQUIRED COMPONENTS system)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES jsk_2016_04_cmo
+#  LIBRARIES jsk_201604_cmo
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
 )
@@ -117,8 +117,8 @@ catkin_package(
 # include_directories(include)
 
 ## Declare a C++ library
-# add_library(jsk_2016_04_cmo
-#   src/${PROJECT_NAME}/jsk_2016_04_cmo.cpp
+# add_library(jsk_201604_cmo
+#   src/${PROJECT_NAME}/jsk_201604_cmo.cpp
 # )
 add_library(model_push SHARED src/model_push.cpp)
 target_link_libraries(model_push ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES})
@@ -126,17 +126,17 @@ target_link_libraries(model_push ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES})
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
 ## either from message generation or dynamic reconfigure
-# add_dependencies(jsk_2016_04_cmo ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(jsk_201604_cmo ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Declare a C++ executable
-# add_executable(jsk_2016_04_cmo_node src/jsk_2016_04_cmo_node.cpp)
+# add_executable(jsk_201604_cmo_node src/jsk_201604_cmo_node.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-# add_dependencies(jsk_2016_04_cmo_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(jsk_201604_cmo_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(jsk_2016_04_cmo_node
+# target_link_libraries(jsk_201604_cmo_node
 #   ${catkin_LIBRARIES}
 # )
 
@@ -155,7 +155,7 @@ target_link_libraries(model_push ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES})
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS jsk_2016_04_cmo jsk_2016_04_cmo_node
+# install(TARGETS jsk_201604_cmo jsk_201604_cmo_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -180,7 +180,7 @@ target_link_libraries(model_push ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES})
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_jsk_2016_04_cmo.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_jsk_201604_cmo.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
