@@ -10,6 +10,6 @@
   </include>
 
   <!-- Oh, you wanted a robot? -->
-  <include file="$(find fetch_gazebo)/launch/include/fetch.launch.xml" />
+  <include file="$(find jsk_2016_04_cmo)/launch/include/fetch.launch.xml" />
 
 </launch>
