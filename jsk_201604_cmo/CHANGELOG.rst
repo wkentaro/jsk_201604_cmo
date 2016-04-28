@@ -2,8 +2,8 @@
 Changelog for package jsk_201604_cmo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.0.0 (2016-04-29)
+------------------
 * Change euslisp library path
 * Rename project jsk_2016_04_cmo -> jsk_201604_cmo
 * Minor changes for movie
