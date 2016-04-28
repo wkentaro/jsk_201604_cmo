@@ -1,0 +1,30 @@
+<launch>
+
+  <arg name="INPUT_CLOUD" value="/head_camera/depth_registered/points" />
+  <arg name="MANAGER" value="/head_camera/head_camera_nodelet_manager" />
+
+  <node name="passthrough_z"
+        pkg="nodelet" type="nodelet"
+        args="load pcl/PassThrough $(arg MANAGER)">
+    <remap from="~input" to="$(arg INPUT_CLOUD)" />
+    <rosparam>
+      filter_field_name: z
+      filter_limit_min: 0.2
+      keep_organized: true
+    </rosparam>
+  </node>
+
+  <node name="euclid_clustering"
+        pkg="nodelet" type="nodelet"
+        args="load jsk_pcl/EuclideanClustering $(arg MANAGER)">
+    <remap from="~input" to="passthrough_z/output" />
+  </node>
+
+  <node name="cpi_decomposer"
+        pkg="nodelet" type="nodelet"
+        args="load jsk_pcl/ClusterPointIndicesDecomposer $(arg MANAGER)">
+    <remap from="~input" to="passthrough_z/output" />
+    <remap from="~target" to="euclid_clustering/output" />
+  </node>
+
+</launch>
