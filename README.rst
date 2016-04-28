@@ -7,7 +7,7 @@ jsk_201604_cmo
 Milestones
 ----------
 
-0.1.0: Level1
+1.0.0: Level1
 +++++++++++++
 
 - Content: Catch a hovering (stopping) object with visual recognition.
