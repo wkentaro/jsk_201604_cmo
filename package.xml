@@ -2,7 +2,7 @@
 <package>
 
   <name>jsk_201604_cmo</name>
-  <version>0.0.1</version>
+  <version>1.0.0</version>
   <description>Catch Moving Object task project.</description>
 
   <maintainer email="www.kentaro.wada@gmail.com">Kentaro Wada</maintainer>
