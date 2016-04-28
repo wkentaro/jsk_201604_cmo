@@ -1,8 +1,8 @@
 #!/usr/bin/env roseus
 ;; vim: set ft=lisp:
 
-(require :util "package://jsk_2016_04_cmo/euslib/util.l")
-(require :fetch-interface "package://jsk_2016_04_cmo/euslib/fetch-interface.l")
+(require :util "package://jsk_201604_cmo/euslib/util.l")
+(require :fetch-interface "package://jsk_201604_cmo/euslib/fetch-interface.l")
 
 
 ;; -------------------------------------------------------------------------

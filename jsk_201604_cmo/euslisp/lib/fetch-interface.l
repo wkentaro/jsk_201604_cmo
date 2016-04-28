@@ -4,19 +4,19 @@
 (require :fetcheus-fetch-interface "package://fetcheus/fetch-interface.l")
 
 
-(ros::load-ros-manifest "jsk_2016_04_cmo")
+(ros::load-ros-manifest "jsk_201604_cmo")
 
 
 (unless (find-package "JSK_2016_04_CMO")
   (make-package "JSK_2016_04_CMO"))
 
 
-(defclass jsk_2016_04_cmo::fetch-interface
+(defclass jsk_201604_cmo::fetch-interface
   :super fetch-interface
   :slots (_tfl)
   )
 
-(defmethod jsk_2016_04_cmo::fetch-interface
+(defmethod jsk_201604_cmo::fetch-interface
   (:init
     (&rest args)
     (send-super* :init args)
@@ -54,6 +54,6 @@
     (setq *fetch* (instance fetch-robot :init))
     )
   (unless (boundp '*ri*)
-    (setq *ri* (instance jsk_2016_04_cmo::fetch-interface :init))
+    (setq *ri* (instance jsk_201604_cmo::fetch-interface :init))
     )
   )

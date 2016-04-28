@@ -8,16 +8,16 @@
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="headless" value="false"/>
-    <arg name="world_name" value="$(find jsk_2016_04_cmo)/worlds/level1.sdf"/>
+    <arg name="world_name" value="$(find jsk_201604_cmo)/worlds/level1.sdf"/>
   </include>
 
-  <include file="$(find jsk_2016_04_cmo)/launch/include/fetch.launch.xml" />
+  <include file="$(find jsk_201604_cmo)/launch/include/fetch.launch.xml" />
 
-  <include file="$(find jsk_2016_04_cmo)/launch/include/detect_hover_cube.launch.xml" />
+  <include file="$(find jsk_201604_cmo)/launch/include/detect_hover_cube.launch.xml" />
 
   <group if="$(arg launch_main)">
     <node name="level1_motion"
-          pkg="jsk_2016_04_cmo" type="level1.l"
+          pkg="jsk_201604_cmo" type="level1.l"
           args="&quot;(main)&quot;" />
   </group>
 

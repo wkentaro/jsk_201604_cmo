@@ -1,5 +1,5 @@
-jsk_2016_04_cmo
-===============
+jsk_201604_cmo
+==============
 
 **Catch Moving Object** task project from April 2016.
 
