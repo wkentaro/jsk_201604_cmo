@@ -15,8 +15,6 @@
   (setq hover-cube (send *ri* :detect-hover-cube))
   (send hover-cube :set-color :Green 0.3)
 
-  (objects (list *robot* hover-cube))
-
   (setq goal (send hover-cube :copy-worldcoords))
   (send goal :orient 0 :x :world)
   (send goal :translate #f(-10 0 0) :world)
@@ -25,12 +23,10 @@
   (send point :translate #f(-90 0 0) :world)
   (setq av (send *robot* :rarm :inverse-kinematics point))
   (send *ri* :angle-vector av (* 3 1000))
-  (send *irtviewer* :redraw)
   (send *ri* :wait-interpolation)
   ;;
   (setq av (send *robot* :rarm :inverse-kinematics goal))
   (send *ri* :angle-vector av (* 1 1000))
-  (send *irtviewer* :redraw)
   (send *ri* :wait-interpolation)
   ;;
   (send *ri* :start-grasp)
