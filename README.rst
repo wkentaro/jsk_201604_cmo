@@ -1,6 +1,9 @@
 jsk_201604_cmo
 ==============
 
+.. image:: https://travis-ci.org/wkentaro/jsk_201604_cmo.svg?branch=master
+    :target: https://travis-ci.org/wkentaro/jsk_201604_cmo
+
 *Catch Moving Object* (CMO) task project from April 2016.
 
 
