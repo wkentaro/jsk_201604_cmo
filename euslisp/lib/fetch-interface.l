@@ -1,7 +1,7 @@
 ;; vim: set ft=lisp:
 
-(require :fetch "package://fetcheus/fetch.l")
-(require :fetcheus-fetch-interface "package://fetcheus/fetch-interface.l")
+(require "package://fetcheus/fetch-interface.l")
+(require "package://jsk_201604_cmo/euslisp/lib/fetch.l")
 
 
 (ros::load-ros-manifest "jsk_201604_cmo")

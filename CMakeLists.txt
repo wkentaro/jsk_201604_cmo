@@ -187,3 +187,8 @@ target_link_libraries(model_push ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES})
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+if(CATKIN_ENABLE_TESTING)
+  find_package(rostest REQUIRED)
+  # add_rostest(test/test_level1.test)  # FIXME: on Travis it fails
+endif()
