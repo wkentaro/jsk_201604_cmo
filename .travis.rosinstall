@@ -1,0 +1,4 @@
+- git:
+    local-name: jsk_common
+    uri: https://github.com/wkentaro/jsk_common.git
+    version: tf-to-pose

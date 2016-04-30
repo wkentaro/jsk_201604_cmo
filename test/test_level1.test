@@ -1,0 +1,22 @@
+<launch>
+
+  <include file="$(find jsk_201604_cmo)/launch/level1.launch">
+    <arg name="gui" value="false" />
+  </include>
+
+  <node name="tf_to_pose"
+        pkg="jsk_topic_tools" type="tf_to_pose.py">
+    <rosparam>
+      src_frame: odom
+      dst_frame: gripper_link
+    </rosparam>
+  </node>
+
+  <test test-name="test_level1"
+        name="test_level1"
+        pkg="jsk_201604_cmo" type="test_level1.py">
+    <remap from="~end_effector" to="tf_to_pose/output" />
+    <remap from="~state" to="level1_motion/state" />
+  </test>
+
+</launch>

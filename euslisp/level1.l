@@ -9,6 +9,9 @@
 ;; main
 ;; -------------------------------------------------------------------------
 (defun main ()
+  (ros::roseus "robot_motion")
+  (ros::set-param "~state" "running")
+
   (fetch-init)
   (setq *robot* *fetch*)
 
@@ -33,4 +36,9 @@
   ;;
   (send *ri* :angle-vector (send *robot* :fold-pose) (* 3 1000))
   (send *ri* :wait-interpolation)
+  ;;
+  (send *ri* :angle-vector (send *robot* :reset-pose) (* 2 1000))
+  (send *ri* :wait-interpolation)
+
+  (ros::set-param "~state" "finished")
   )
